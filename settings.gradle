@@ -1,0 +1,1 @@
+include ':QQBottomTab', ':app', ':Wechat', ':easeui', ':simpledemo'

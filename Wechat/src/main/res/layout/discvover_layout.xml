@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/tv_toRedpac"
+        android:text="this is moment"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <Button
+        android:text="获取红包"
+        android:layout_gravity="bottom"
+        android:id="@+id/btn_getRedpack"
+        android:background="#BA8C41"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"/>
+</LinearLayout>

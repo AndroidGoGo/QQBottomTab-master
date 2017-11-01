@@ -1,0 +1,60 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+  
+
+
+        /*  android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="新闻"
+        android:gravity="center"
+        android:textColor="@drawable/sel_bottom_tab_text"
+        android:padding="8dp"
+        android:button="@null"
+        android:drawableTop="@drawable/sel_news"*/
+        <style name="bottom_tab">
+            <item name="android:layout_width" >0dp</item>
+            <item name="android:layout_height" >wrap_content</item>
+            <item name="android:layout_weight" >1</item>
+            <item name="android:text" >0dp</item>
+            <item name="android:gravity" >center</item>
+            <item name="android:textColor" >@drawable/sel_bottom_tab_text</item>
+            <item name="android:padding" >8dp</item>
+            <item name="android:button" >@null</item>
+        </style>
+    <style name="LoadingDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.2</item>
+        <item name="android:windowSoftInputMode">adjustPan|stateAlwaysHidden</item>
+        <item name="android:windowEnterAnimation">@anim/slide_in_from_right</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_to_right</item>
+    </style>
+
+    <style name="CustomLoading" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+
+</resources>

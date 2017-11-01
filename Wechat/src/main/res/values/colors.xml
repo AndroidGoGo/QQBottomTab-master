@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="app_primary_color">#80c3db</color>
+    <color name="app_primary_dark_color">#45b9de</color>
+    <color name="app_transparent">#00000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="grey">#808080</color>
+    <color name="black">#000000</color>
+    <color name="tab_gray">#ff999999</color>
+    <color name="tab_green">#ff45c01a</color>
+    <color name="tick_yellow">#f5d747</color>
+    <color name="tick_gray">#eaeaea</color>
+    <color name="tick_white">#fff</color>
+    <color name="gold">#BA8C41</color>
+
+
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="bg_tab_select">#80FF80</color>
+    <!-- <color name="bg_tab_unselect">#C0C0C0</color>-->
+    <color name="bg_tab_unselect">#272636</color>
+    <color name="bg_tab">#fff</color>
+    <color name="color_757575">#757575</color>
+    <color name="color_F1F1F1">#F1F1F1</color>
+
+    <color name="menu_checked_bg_color">#394050</color>
+    <color name="color_898989">#898989</color>
+    <color name="color_019587">#019587</color>
+    <color name="me_title_color">#019587</color>
+    <color name="color_E1E1E1">#EAE8E8</color>
+
+
+
+    <color name="percent_text_color_default">#009ACD</color>
+    <color name="percent_text_color">#3CB371</color>
+    <color name="percent_text_color_2">#A2CD5A</color>
+    <color name="progressbar_bg_color_default">#636363</color>
+    <color name="progress_color_default">#00C5CD</color>
+    <color name="progressbar_bg_color_1">#737373</color>
+    <color name="progress_color_1">#3CB371</color>
+    <color name="bg">#CDB5CD</color>
+
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/iv_glide"
+        android:layout_width="60dp"
+    android:layout_height="60dp" />
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:id="@+id/tv_glide"
+        android:textSize="14sp"
+        android:textColor="#ff0000"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

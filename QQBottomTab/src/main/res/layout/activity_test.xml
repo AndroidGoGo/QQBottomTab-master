@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+
+        android:id="@+id/btn_getWeather"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="豆瓣电影Top250" />
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_marginTop="50dp"
+            android:id="@+id/rv_doubanMovieDemo"
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+
+
+
+
+
+    <Button
+
+        android:id="@+id/btn_showDialog"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:text="红包来了" />
+
+</RelativeLayout>

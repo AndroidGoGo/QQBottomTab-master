@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/activity_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+>
+
+    <Button
+        android:id="@+id/btn_first_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"
+        android:text="第一种实现方案"/>
+
+    <Button
+        android:id="@+id/btn_second_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"
+        android:text="第二种实现方案"/>
+
+
+    <Button
+        android:id="@+id/btn_third_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"
+        android:text="第三种实现方案"/>
+
+    <Button
+        android:id="@+id/btn_four_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"
+        android:text="测试"/>
+    <Button
+        android:id="@+id/btn_big_pic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"
+        android:text="超大背景图"/>
+    <Button
+        android:id="@+id/btn_glide_demo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"
+        android:text="GlideDemo"/>
+    <Button
+        android:id="@+id/vp_demo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"
+        android:text="ViewPage用例"/>
+
+    <Button
+        android:id="@+id/im_demoByWangyi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"
+        android:text="网易云即时通讯"/>
+    <Button
+        android:id="@+id/im_demoByHuanxin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"
+        android:text="环信即时通讯"/>
+    <Button
+        android:id="@+id/test_act"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"
+        android:text="测试页面"/>
+
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FF3030">
+
+
+        <ImageView
+            android:id="@+id/img_return"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/img_return"/>
+
+        <View
+
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/img_return"
+            android:background="#BA8C41"/>
+
+        <TextView
+            android:id="@+id/tv_redPacType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="60dp"
+            android:text="红包详情"
+            android:textColor="#BA8C41"
+            android:textSize="18sp"/>
+
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp">
+                <star.yx.widegt.ArcHeaderView
+                    android:id="@+id/arcHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"/>
+                <View
+                    android:background="@drawable/shape_img_bac"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="48dp"
+                    />
+                <star.yx.widegt.RoundImageView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="51dp"
+
+                    android:background="@mipmap/photo"/>
+
+
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textColor="#050505"
+                    android:text="某某某"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tv_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/tv_redPacke_type"
+                    android:background="#EEB422"
+                    android:text="拼"
+                    android:textColor="#FFFFFF"/>
+
+            </LinearLayout>
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="恭喜发财，大吉大利！"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:text="100.00"
+                    android:textSize="40sp"
+                    android:textColor="#050505"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+                <TextView
+                    android:textSize="12sp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:text="元"
+                    android:layout_width="wrap_content"
+                    android:gravity="bottom"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+
+
+
+
+            <TextView
+                android:textColor="#1874CD"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="已存入零钱，可直接转账"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+            <TextView
+
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="40dp"
+                android:text="5个红包共2.00元，3分钟被抢光"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_redpackDetial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </android.support.v7.widget.RecyclerView>
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

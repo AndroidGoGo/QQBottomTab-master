@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+         >
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:textColor="#feffff"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/close"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:src="@mipmap/close" />
+
+        </RelativeLayout>
+
+
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="100dp"
+            android:background="@mipmap/hb"
+            android:layout_centerInParent="true"
+            android:layout_height="160dp" />
+
+        <LinearLayout
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:text="取消"
+                android:id="@+id/btn_cancel"
+                android:layout_weight="1"
+                android:layout_marginLeft="30dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <View
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="20dp"/>
+            <Button
+                android:text="领取"
+                android:id="@+id/btn_true"
+                android:layout_weight="1"
+                android:layout_marginRight="30dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>

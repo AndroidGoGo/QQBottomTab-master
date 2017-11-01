@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#CCCCCC"
+        android:gravity="center">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="@dimen/_10dp"
+        android:background="@drawable/shape_editext">
+
+        <EditText
+            android:id="@+id/et_inputOrderNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_10dp"
+            android:background="@null"
+            android:enabled="false"
+            android:hint="请输入订单编号"
+            android:nextFocusLeft="@id/et_inputOrderNumber"
+            android:nextFocusUp="@id/et_inputOrderNumber"
+            android:textColor="@color/me_title_color"
+            android:textSize="14sp"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_search"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/_1dp"
+            android:background="@color/color_E1E1E1">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/search"/>
+        </RelativeLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tl_activity_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabIndicatorColor="#FF33FF"
+        app:tabIndicatorHeight="2dp"
+        app:tabMinWidth="3dp"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="#FF33FF"
+        app:tabTextColor="#000066">
+
+
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/><!--装4个Fragment-->
+    <include layout="@layout/send_comment" />
+</LinearLayout>

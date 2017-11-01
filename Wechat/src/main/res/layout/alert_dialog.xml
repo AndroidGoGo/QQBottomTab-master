@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@drawable/dlg_circle_bg"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/permission_tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_smaller"
+        android:layout_marginTop="@dimen/margin_smaller"
+        android:paddingBottom="15dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="15dp"
+        android:text=""
+        android:textColor="@color/color_757575"
+        android:textSize="16sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_smaller"
+        android:layout_marginRight="@dimen/margin_smaller"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/permission_tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="15dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="15dp"
+            android:paddingTop="15dp"
+            android:text=""
+            android:textColor="@color/color_757575"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|right"
+        android:orientation="horizontal"
+        android:paddingRight="@dimen/space_20">
+
+        <TextView
+            android:id="@+id/permission_tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_click_bg"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="取消"
+            android:textColor="@color/color_898989"
+            android:textSize="16sp"/>
+
+
+        <TextView
+            android:id="@+id/permission_tv_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_smaller"
+            android:background="@drawable/btn_click_bg"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="去设置"
+            android:textColor="@color/color_019587"
+            android:textSize="16sp"/>
+    </LinearLayout>
+</LinearLayout>
