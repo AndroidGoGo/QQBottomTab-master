@@ -2,6 +2,7 @@ package com.xujun.fragmenttabhostdemo.net;
 
 import android.util.Log;
 
+import com.google.gson.Gson;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.lzq.net.NewApi;
 import com.lzq.net.UrlBase;
@@ -21,6 +22,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 /**
@@ -70,17 +72,17 @@ public class RetrofitService {
      */
     private volatile static NewApi sApi = null;
 
-    public static NewApi createZhenlerAPI() {
+    public static NewApi createZhenlerAPI(String url) {
         if (sApi == null) {
             synchronized (RetrofitService.class) {
                 if (sApi == null) {
                     initOkHttpClient();
                     sApi = new Retrofit.Builder()
                             .client(mOkHttpClient)
-                            .baseUrl(UrlBase.BASE_NET_URL_NEW)
+                            .baseUrl(url==null? UrlBase.BASE_NET_URL_ZXF:UrlBase.BASE_NET_URL_ZXF)
                              .addConverterFactory(SetterExclusionStrategy.create())//增加返回值为BaseResponse<String>的支持
                           //  .addConverterFactory(ScalarsConverterFactory.create())////增加返回值为String的支持
-                        //  .addConverterFactory(GsonConverterFactory.create(new Gson()))//增加返回值为Gson实体类的支持
+                          .addConverterFactory(GsonConverterFactory.create(new Gson()))//增加返回值为Gson实体类的支持
                             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())//增加对RxJava操作的支持
                             .build().create(NewApi.class);
                 }
@@ -114,6 +116,7 @@ public class RetrofitService {
                      * closed，原因为OkHttp请求回调中response.body().string()只能有效调用一次
                      */
                     //响应的时候
+
                     Response originalResponse = chain.proceed(request);
                     //这里获取请求返回的cookie
                     MediaType mediaType = originalResponse.body().contentType();

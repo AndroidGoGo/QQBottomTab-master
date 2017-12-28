@@ -331,7 +331,7 @@ public class FileUtils {
      * @param resourcesId
      * @param width
      * @param height
-     * @return  此种方式比较低耗能
+     * @return 从资源文件中获取bitmap 此种方式比较低耗能
      */
     public static Bitmap readBitmapFromResource2(Resources resources, int resourcesId, int width, int height) {
         InputStream ins = resources.openRawResource(resourcesId);

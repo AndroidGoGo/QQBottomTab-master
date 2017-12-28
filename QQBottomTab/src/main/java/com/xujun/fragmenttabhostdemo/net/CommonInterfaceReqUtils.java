@@ -164,6 +164,7 @@ public class CommonInterfaceReqUtils {
         Map<String,String> map=new ArrayMap<>();
 
         JSONObject params=new JSONObject(request);
+       // params.put("signtime", System.currentTimeMillis() / 1000 + "");
         Iterator<String> s = params.keys();
         while (s.hasNext()) {
             String key =s.next();

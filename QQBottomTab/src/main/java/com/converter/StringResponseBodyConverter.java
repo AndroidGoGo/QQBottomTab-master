@@ -17,22 +17,23 @@ import retrofit2.Converter;
 public class StringResponseBodyConverter implements Converter<ResponseBody, BaseResponse<String>> {
     @Override
     public BaseResponse<String> convert(ResponseBody value) throws IOException {
-        String str=value.string();
-        BaseResponse<String> response=null;
+        String str = value.string();
+        BaseResponse<String> response = null;
         try {
-            JSONObject json=new JSONObject(str);
-            response=new BaseResponse<>();
-//            response.setCode(json.optString("code"));
+            JSONObject json = new JSONObject(str);
+            response =  BaseResponse.getInstance();
+            response.setError_code(json.optInt("code"));
 //            response.setValue(json.optString("value"));
 //            response.setMessage(json.optString("message"));
-
+            response.setData(json.optString("data"));
             response.setReturnStatus(true);
-            //response.setHeWeather5( json.optString("HeWeather"));
+            response.setError(json.optString("data"));
+
             response.setSubjects(json.optString("subjects"));
 
         } catch (JSONException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             value.close();
         }
         return response;

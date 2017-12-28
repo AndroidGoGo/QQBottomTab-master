@@ -20,6 +20,7 @@
         <activity android:name="star.yx.activity.RedpackActivity"/>
         <activity android:name="star.yx.activity.RedpackRecordActvity"/>
         <activity android:name="star.yx.activity.GruopRedpackDetialActivity"/>
+        <activity android:name="star.yx.activity.RomanticActivity"/>
     </application>
 
 </manifest>

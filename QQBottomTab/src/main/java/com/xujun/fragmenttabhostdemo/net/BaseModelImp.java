@@ -104,10 +104,10 @@ public class BaseModelImp {
                 request = gson.toJson(params);
             }
             if (TextUtils.isEmpty(request)) {
-                observable = (Observable<CommonResponse<String>>) invokeMethod.invoke(RetrofitService.createZhenlerAPI());
+                observable = (Observable<CommonResponse<String>>) invokeMethod.invoke(RetrofitService.createZhenlerAPI(null), CommonInterfaceReqUtils.initRequestParameters(request));
             } else {
                 Log.v("request参数", "request---------" + request);
-                observable = (Observable<CommonResponse<String>>) invokeMethod.invoke(RetrofitService.createZhenlerAPI()
+                observable = (Observable<CommonResponse<String>>) invokeMethod.invoke(RetrofitService.createZhenlerAPI(null)
                         , CommonInterfaceReqUtils.initRequestParameters(request));
 //                JSONObject obj=new JSONObject(request);
 //                body = RequestBody.create(okhttp3.MediaType.parse("application/json; charset=utf-8"),request);

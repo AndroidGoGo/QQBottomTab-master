@@ -14,6 +14,7 @@ import com.xujun.fragmenttabhostdemo.net.RetrofitService;
 
 import org.json.JSONException;
 
+import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
@@ -36,6 +37,19 @@ public class NewBaseNet {
     OnNetResponseListener<BaseResponse<String>> onNetResponseListener;
     Map<String, Object> params = new ArrayMap<>();
     private boolean needFailedStatus;
+    private String mBaseUrl;
+    private String mDataName;
+
+    public NewBaseNet setDataName(String name) {
+        mDataName = name;
+        BaseResponse.getInstance().setDataName(name);
+        return this;
+    }
+
+    public NewBaseNet setBaseUrl(String url) {
+        mBaseUrl = url;
+        return this;
+    }
 
     public NewBaseNet setMethod(String method) {
         this.method = method;
@@ -43,11 +57,17 @@ public class NewBaseNet {
     }
 
     public NewBaseNet needFailedStatus() {
-        this.needFailedStatus=true;
+        this.needFailedStatus = true;
         return this;
     }
+
     public NewBaseNet addParam(String key, Object param) {
         params.put(key, param);
+        return this;
+    }
+    private File  mFile;
+    public  NewBaseNet  addFile(File  file){
+        mFile = file;
         return this;
     }
 
@@ -66,15 +86,18 @@ public class NewBaseNet {
                 request = gson.toJson(params);
             }
             if (TextUtils.isEmpty(request)) {
-                observable = (Observable<BaseResponse<String>>) invokeMethod.invoke(RetrofitService.createZhenlerAPI());
+                observable = (Observable<BaseResponse<String>>) invokeMethod.invoke(RetrofitService.createZhenlerAPI(mBaseUrl == null ? null : mBaseUrl), CommonInterfaceReqUtils.initRequestParameters(request));
             } else {
                 Log.v("request参数", "request---------" + request);
-                observable = (Observable<BaseResponse<String>>) invokeMethod.invoke(RetrofitService.createZhenlerAPI()
+                observable = (Observable<BaseResponse<String>>) invokeMethod.invoke(RetrofitService.createZhenlerAPI(mBaseUrl == null ? null : mBaseUrl)
                         , CommonInterfaceReqUtils.initRequestParameters(request));
 //                JSONObject obj=new JSONObject(request);
 //                body = RequestBody.create(okhttp3.MediaType.parse("application/json; charset=utf-8"),request);
 //                observable = (Observable<CommonResponse<String>>) invokeMethod.invoke(RetrofitService.createZhenlerAPI()
 //                        , body, CommonInterfaceReqUtils.initRequestParameters(obj));
+                if (null == observable) {
+                    Log.e("观察者对象", "创建失败");
+                }
             }
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
@@ -86,6 +109,42 @@ public class NewBaseNet {
             e.printStackTrace();
         }
         return this;
+    }
+
+    public NewBaseNet updata() {
+        ExclusionStrategy excludeStrategy = new com.xujun.fragmenttabhostdemo.utils.SetterExclusionStrategy(new String[]{"createTime", "lastUpdateTime", "birthday"});
+        Gson gson = new GsonBuilder().setExclusionStrategies(excludeStrategy)
+                .create();
+        Method invokeMethod = null;
+        try {
+            invokeMethod = NewApi.class.getDeclaredMethod(method, new Class[]{String.class, Map.class});
+
+            String request = null;
+            if (params.size() > 0) {
+                request = gson.toJson(params);
+            }
+            if (TextUtils.isEmpty(request)) {
+
+                observable = (Observable<BaseResponse<String>>) invokeMethod.invoke(RetrofitService.createZhenlerAPI(mBaseUrl == null ? null : mBaseUrl), CommonInterfaceReqUtils.initRequestParameters(request));
+
+            } else {
+
+
+                observable = (Observable<BaseResponse<String>>) invokeMethod.invoke(RetrofitService.createZhenlerAPI(mBaseUrl == null ? null : mBaseUrl)
+                        ,mFile , CommonInterfaceReqUtils.initRequestParameters(request));
+
+            }
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e1) {
+            e1.printStackTrace();
+        }
+        return this;
+
     }
 
 
@@ -115,16 +174,16 @@ public class NewBaseNet {
                         //这是判断是否是业务层面的服务器请求异常，此处是根据返回的值是否为空来判断的，根据自己和服务器的约定自行判断业务异常
                         Log.e("BaseModelImp服务器返回---", value.toString());
 
-                        if(needFailedStatus){
+                        if (needFailedStatus) {
                             if (onNetResponseListener != null)
-                                onNetResponseListener.onSuccess(value.getSubjects());
-                        }else{
-                            if (value.isReturnStatus==true) {
+                                onNetResponseListener.onSuccess(value.getData());
+                        } else {
+                            if (value.isReturnStatus == true) {
                                 if (onNetResponseListener != null)
-                                    onNetResponseListener.onSuccess(value.getSubjects());
+                                    onNetResponseListener.onSuccess(value.getData());
                             } else {
                                 if (onNetResponseListener != null)
-                                    onNetResponseListener.onFailure(new Exception("错误码:"+"") );
+                                    onNetResponseListener.onFailure(new Exception("错误码:" + ""));
                             }
                         }
                     }

@@ -58,16 +58,16 @@ public class StatusHookView extends View {
     private StatusHookEnum mStatusHookEnum;
 
     public StatusHookView(Context context) {
-        this(context,null);
+        this(context, null);
     }
 
     public StatusHookView(Context context, @Nullable AttributeSet attrs) {
-        this(context, attrs,0);
+        this(context, attrs, 0);
     }
 
     public StatusHookView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-mContext = context;
+        mContext = context;
         initAttrs(attrs);
         init();
 
@@ -81,7 +81,7 @@ mContext = context;
         checkTickColor = typedArray.getColor(R.styleable.StatusHookView_check_tick_color, getResources().getColor(R.color.tick_white));
         radius = typedArray.getDimensionPixelOffset(R.styleable.StatusHookView_radius, (int) dp2px(mContext, 30));
 
- //获取配置的动画速度
+        //获取配置的动画速度
         int rateMode = typedArray.getInt(R.styleable.StatusHookView_rate, StatusHookEnum.RATE_MODE_NORMAL);
         mStatusHookEnum = StatusHookEnum.getRateEnum(rateMode);
         typedArray.recycle();
